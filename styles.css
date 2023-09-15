@@ -1,11 +1,84 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Noto+Sans+Mono:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Noto+Sans+Mono:wght@500&display=swap");
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: max-content;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 2;
+  cursor: pointer;
+}
+.hamburger-menu input {
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  pointer-events: none;
+}
+.hamburger-menu input:checked {
+  opacity: 0;
+  width: 0;
+}
+
+.hamburger-menu:has(input:checked)::before {
+  rotate: 45deg;
+  width: 50.9116882453px;
+  translate: 0 -4px;
+  background-color: white;
+}
+.hamburger-menu:has(input:checked)::after {
+  rotate: -45deg;
+  width: 50.9116882453px;
+  translate: 0 4px;
+  background-color: white;
+}
+.hamburger-menu:has(input:checked) + .sidebar {
+  translate: 0;
+}
+.hamburger-menu:has(input:checked):has(input:focus-visible)::before, .hamburger-menu:has(input:checked):has(input:focus-visible)::after, .hamburger-menu:has(input:checked) input:focus-visible {
+  border: 1px solid #333;
+  box-shadow: 0 0 0 1px white;
+}
+
+.hamburger-menu:has(input:focus-visible)::before,
+.hamburger-menu:has(input:focus-visible)::after,
+.hamburger-menu input:focus-visible {
+  border: 1px solid white;
+  box-shadow: 0 0 0 1px #333;
+}
+
+.hamburger-menu::before, .hamburger-menu::after, .hamburger-menu input {
+  content: "";
+  width: 60px;
+  height: 8px;
+  background-color: #333;
+  border-radius: 9999px;
+  transition: opacity 200ms ease-in-out, width 200ms ease-in-out, rotate 200ms ease-in-out, translate 200ms ease-in-out, background-color 200ms ease-in-out;
+  transform-origin: left center;
+}
 
 .profile {
-  padding: 10em;
   display: flex;
   align-items: center;
-  font-family: 'Noto Sans Mono', monospace;
+  font-family: "Noto Sans Mono", monospace;
+  padding: 1em 0em;
 }
+@media (min-width: 768px) {
+  .profile {
+    padding: 10em;
+  }
+}
+
 .typewriter h1 {
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   border-right: 0.15em solid orange; /* The typwriter cursor */
@@ -14,7 +87,14 @@
   letter-spacing: 0.1em; /* Adjust as needed */
   font-family: "Noto Sans Mono", monospace;
   animation: typing 1.5s steps(12, end), blink-caret 0.75s step-end infinite;
+  font-size: 1.5em;
 }
+@media (min-width: 768px) {
+  .typewriter h1 {
+    font-size: 2.5em;
+  }
+}
+
 /* The typing effect */
 @keyframes typing {
   from {
@@ -24,35 +104,57 @@
     width: 100%;
   }
 }
-
 /* The typewriter cursor effect */
 @keyframes blink-caret {
-  from,
-  to {
+  from, to {
     border-color: transparent;
   }
   50% {
     border-color: orange;
   }
 }
-
 .profile-picture {
   display: flex;
-  width: 10em;
-  height: 10em;
   background-image: url("./52345631_2787266421283827_1114035386104938496_n.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 50%;
+  width: 5em;
+  height: 5em;
   margin: 0 2em;
+}
+@media (min-width: 768px) {
+  .profile-picture {
+    width: 10em;
+    height: 10em;
+    margin: 0 2em;
+  }
 }
 
 header {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .header-welcome {
-    font-size: 1.5em;
+  font-size: 0.75em;
 }
+@media (min-width: 768px) {
+  .header-welcome {
+    font-size: 1.5em;
+  }
+}
+
+.sidebar {
+  transition: translate 200ms ease-in-out;
+  translate: -100%;
+  padding: 0.5rem 1rem;
+  padding-top: calc(44px + 1rem);
+  background-color: #333;
+  color: white;
+  max-width: 10rem;
+  min-height: 100vh;
+}
+
+/*# sourceMappingURL=styles.css.map */
