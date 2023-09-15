@@ -1,14 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Noto+Sans+Mono:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Noto+Sans+Mono:wght@500&family=Work+Sans:wght@400;800&display=swap');
 
-$bar-height: 8px;
-$bar-width: 60px;
+$bar-height: 5px;
+$bar-width: 40px;
 $hamburger-gap: 6px;
-$foreground: #333;
+$foreground: #323233;
 $background: white;
-$hamburger-margin: 8px;
+$menu-foreground: white;
+$hamburger-margin: 1em;
 $animation-timing: 200ms ease-in-out;
 $hamburger-height: calc( $bar-height * 3 + $hamburger-gap * 2);
 $x-width: calc($hamburger-height * 1.41421356237);
+$svg-height: 1.75rem;
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -16,6 +18,7 @@ $x-width: calc($hamburger-height * 1.41421356237);
 
 body {
   margin: 0;
+  background-color: $background;
 }
 
 .hamburger-menu {
@@ -42,19 +45,19 @@ body {
 }
 
 .hamburger-menu:has(input:checked){
-  $foreground: white;
-  $background: #333;
+  $foreground: #67b2fd;
+  $background: white;
   &::before {
     rotate: 45deg;
     width:$x-width;
     translate: 0 calc($bar-height/-2);
-    background-color: $foreground;
+    background-color: $background;
   }
   &::after {
     rotate: -45deg;
     width:$x-width;
     translate: 0 calc($bar-height/2);
-    background-color: $foreground;
+    background-color: $background;
   }
   & + .sidebar {
     translate: 0;
@@ -81,7 +84,7 @@ body {
   content: "";
   width: $bar-width;
   height: $bar-height;
-  background-color: $foreground;
+  background-color: white;
   border-radius: 9999px;
   transition: opacity $animation-timing, width $animation-timing, rotate $animation-timing, translate $animation-timing, background-color $animation-timing;
   transform-origin: left center;
@@ -89,22 +92,26 @@ body {
 
 .profile {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  font-family: 'Noto Sans Mono', monospace;
-  padding: 1em 0em;
+  font-family: 'Work Sans', sans-serif;
+  padding: 1em;
+  padding-top:calc($hamburger-height + 4rem);
   @media (min-width: 768px){
     padding: 10em;
   }
 }
 .typewriter h1 {
   overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: 0.15em solid orange; /* The typwriter cursor */
+  border-right: 0.15em solid rgb(166 210 255); /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
   letter-spacing: 0.1em; /* Adjust as needed */
-  font-family: "Noto Sans Mono", monospace;
+  font-family: 'Work Sans', sans-serif;
   animation: typing 1.5s steps(12, end), blink-caret 0.75s step-end infinite;
-  font-size: 1.5em;
+  font-size: 2em;
+  font-weight: 800;
   @media (min-width:768px) {
     font-size: 2.5em;
   }
@@ -126,19 +133,19 @@ body {
     border-color: transparent;
   }
   50% {
-    border-color: orange;
+    border-color: rgb(166 210 255);
   }
 }
 
 .profile-picture {
   display: flex;
-  background-image: url("./52345631_2787266421283827_1114035386104938496_n.jpeg");
+  background-image: url("./profile-picture.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 50%;
-  width: 5em;
-  height: 5em;
+  width: 4.5em;
+  height: 4.5em;
   margin: 0 2em;
   @media (min-width: 768px) {
     width: 10em;
@@ -150,23 +157,69 @@ body {
 header {
     display: flex;
     flex-direction: column;
+    color: white;
 }
 
 .header-welcome {
-  font-size: .75em;
+  font-size: 1.25em;
   @media (min-width: 768px) {
       font-size: 1.5em;   
     }
 }
 
 .sidebar{
+  position: absolute;
+  top: 0;
   transition: translate $animation-timing;
   translate:-100%;
   padding: .5rem 1rem;
-  padding-top: calc($hamburger-height + $hamburger-margin + 1rem);
-  background-color: $foreground;
+  padding-top: calc($hamburger-height + $hamburger-margin + 2rem);
+  background-color: #67b2fd;
   color: $background;
-  max-width: 10rem;
+  width: 100vw;
   min-height: 100vh;
 }
 
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Work Sans', sans-serif;
+  letter-spacing: 0.175em;
+  margin-top: 1em;
+  & a {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  border: 1px solid white;
+  width: 100%;
+  margin: .5em;
+  border-radius: 5px;
+  & img {
+    height: $svg-height;
+  }
+  }
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  &:hover{
+    text-decoration: underline;
+  }
+  &:focus {
+    color: white;
+  }
+}
+
+.background-container{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  clip-path: polygon(0 0, 100% 0, 100% 55%, 0 80%);
+  background-color: #67b2fd;
+  z-index: -1;
+}

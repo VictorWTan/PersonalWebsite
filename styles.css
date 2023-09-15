@@ -1,10 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Noto+Sans+Mono:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Noto+Sans+Mono:wght@500&family=Work+Sans:wght@400;800&display=swap");
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
+  background-color: white;
 }
 
 .hamburger-menu {
@@ -13,8 +14,8 @@ body {
   gap: 6px;
   width: max-content;
   position: absolute;
-  top: 8px;
-  left: 8px;
+  top: 1em;
+  left: 1em;
   z-index: 2;
   cursor: pointer;
 }
@@ -32,36 +33,36 @@ body {
 
 .hamburger-menu:has(input:checked)::before {
   rotate: 45deg;
-  width: 50.9116882453px;
-  translate: 0 -4px;
+  width: 38.183766184px;
+  translate: 0 -2.5px;
   background-color: white;
 }
 .hamburger-menu:has(input:checked)::after {
   rotate: -45deg;
-  width: 50.9116882453px;
-  translate: 0 4px;
+  width: 38.183766184px;
+  translate: 0 2.5px;
   background-color: white;
 }
 .hamburger-menu:has(input:checked) + .sidebar {
   translate: 0;
 }
 .hamburger-menu:has(input:checked):has(input:focus-visible)::before, .hamburger-menu:has(input:checked):has(input:focus-visible)::after, .hamburger-menu:has(input:checked) input:focus-visible {
-  border: 1px solid #333;
-  box-shadow: 0 0 0 1px white;
+  border: 1px solid white;
+  box-shadow: 0 0 0 1px #67b2fd;
 }
 
 .hamburger-menu:has(input:focus-visible)::before,
 .hamburger-menu:has(input:focus-visible)::after,
 .hamburger-menu input:focus-visible {
   border: 1px solid white;
-  box-shadow: 0 0 0 1px #333;
+  box-shadow: 0 0 0 1px #323233;
 }
 
 .hamburger-menu::before, .hamburger-menu::after, .hamburger-menu input {
   content: "";
-  width: 60px;
-  height: 8px;
-  background-color: #333;
+  width: 40px;
+  height: 5px;
+  background-color: white;
   border-radius: 9999px;
   transition: opacity 200ms ease-in-out, width 200ms ease-in-out, rotate 200ms ease-in-out, translate 200ms ease-in-out, background-color 200ms ease-in-out;
   transform-origin: left center;
@@ -69,9 +70,12 @@ body {
 
 .profile {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  font-family: "Noto Sans Mono", monospace;
-  padding: 1em 0em;
+  font-family: "Work Sans", sans-serif;
+  padding: 1em;
+  padding-top: calc(27px + 4rem);
 }
 @media (min-width: 768px) {
   .profile {
@@ -81,13 +85,14 @@ body {
 
 .typewriter h1 {
   overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: 0.15em solid orange; /* The typwriter cursor */
+  border-right: 0.15em solid rgb(166, 210, 255); /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
   letter-spacing: 0.1em; /* Adjust as needed */
-  font-family: "Noto Sans Mono", monospace;
+  font-family: "Work Sans", sans-serif;
   animation: typing 1.5s steps(12, end), blink-caret 0.75s step-end infinite;
-  font-size: 1.5em;
+  font-size: 2em;
+  font-weight: 800;
 }
 @media (min-width: 768px) {
   .typewriter h1 {
@@ -110,18 +115,18 @@ body {
     border-color: transparent;
   }
   50% {
-    border-color: orange;
+    border-color: rgb(166, 210, 255);
   }
 }
 .profile-picture {
   display: flex;
-  background-image: url("./52345631_2787266421283827_1114035386104938496_n.jpeg");
+  background-image: url("./profile-picture.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 50%;
-  width: 5em;
-  height: 5em;
+  width: 4.5em;
+  height: 4.5em;
   margin: 0 2em;
 }
 @media (min-width: 768px) {
@@ -135,10 +140,11 @@ body {
 header {
   display: flex;
   flex-direction: column;
+  color: white;
 }
 
 .header-welcome {
-  font-size: 0.75em;
+  font-size: 1.25em;
 }
 @media (min-width: 768px) {
   .header-welcome {
@@ -147,14 +153,60 @@ header {
 }
 
 .sidebar {
+  position: absolute;
+  top: 0;
   transition: translate 200ms ease-in-out;
   translate: -100%;
   padding: 0.5rem 1rem;
-  padding-top: calc(44px + 1rem);
-  background-color: #333;
+  padding-top: calc(27px + 1em + 2rem);
+  background-color: #67b2fd;
   color: white;
-  max-width: 10rem;
+  width: 100vw;
   min-height: 100vh;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Work Sans", sans-serif;
+  letter-spacing: 0.175em;
+  margin-top: 1em;
+}
+nav a {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  border: 1px solid white;
+  width: 100%;
+  margin: 0.5em;
+  border-radius: 5px;
+}
+nav a img {
+  height: 1.75rem;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:focus {
+  color: white;
+}
+
+.background-container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  clip-path: polygon(0 0, 100% 0, 100% 55%, 0 80%);
+  background-color: #67b2fd;
+  z-index: -1;
 }
 
 /*# sourceMappingURL=styles.css.map */
