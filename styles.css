@@ -30,6 +30,11 @@ body {
   opacity: 0;
   width: 0;
 }
+@media (min-width: 768px) {
+  .hamburger-menu {
+    display: none;
+  }
+}
 
 .hamburger-menu:has(input:checked)::before {
   rotate: 45deg;
@@ -79,7 +84,10 @@ body {
 }
 @media (min-width: 768px) {
   .profile {
-    padding: 10em;
+    flex-direction: row;
+    justify-content: end;
+    margin-right: 25em;
+    padding-top: 25em;
   }
 }
 
@@ -91,12 +99,14 @@ body {
   letter-spacing: 0.1em; /* Adjust as needed */
   font-family: "Work Sans", sans-serif;
   animation: typing 1.5s steps(12, end), blink-caret 0.75s step-end infinite;
+  animation-delay: 1.5s;
+  animation-fill-mode: both;
   font-size: 2em;
   font-weight: 800;
 }
 @media (min-width: 768px) {
   .typewriter h1 {
-    font-size: 2.5em;
+    font-size: 5em;
   }
 }
 
@@ -131,9 +141,10 @@ body {
 }
 @media (min-width: 768px) {
   .profile-picture {
-    width: 10em;
-    height: 10em;
-    margin: 0 2em;
+    border-radius: 15%;
+    width: 20em;
+    height: 25em;
+    margin-right: 28em;
   }
 }
 
@@ -142,16 +153,31 @@ header {
   flex-direction: column;
   color: white;
 }
-
-.header-welcome {
-  font-size: 1.25em;
-}
 @media (min-width: 768px) {
-  .header-welcome {
-    font-size: 1.5em;
+  header {
+    color: #323233;
   }
 }
 
+.header-welcome {
+  font-size: 1.25em;
+  animation: fadeIn 1s ease-in-out;
+}
+@media (min-width: 768px) {
+  .header-welcome {
+    font-size: 2em;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    display: none;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .sidebar {
   position: absolute;
   top: 0;
@@ -163,6 +189,11 @@ header {
   color: white;
   width: 100vw;
   min-height: 100vh;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    display: none;
+  }
 }
 
 nav {
@@ -207,6 +238,37 @@ a:focus {
   clip-path: polygon(0 0, 100% 0, 100% 55%, 0 80%);
   background-color: #67b2fd;
   z-index: -1;
+}
+@media (min-width: 768px) {
+  .background-container {
+    clip-path: polygon(0 0, 100% 0, 100% 5%, 0 85%);
+  }
+}
+
+.desktop-links {
+  display: none;
+}
+.desktop-links ul {
+  list-style-type: none;
+  display: flex;
+}
+.desktop-links ul li {
+  padding: 0.5em;
+}
+@media (min-width: 768px) {
+  .desktop-links {
+    display: flex;
+    position: absolute;
+    color: white;
+    text-decoration: none;
+    padding: 3em 10em;
+  }
+}
+
+.desktop-anchor {
+  border: none;
+  font-size: 32px;
+  letter-spacing: 0;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -11,6 +11,7 @@ $animation-timing: 200ms ease-in-out;
 $hamburger-height: calc( $bar-height * 3 + $hamburger-gap * 2);
 $x-width: calc($hamburger-height * 1.41421356237);
 $svg-height: 1.75rem;
+$fade-time: 1s;
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -41,6 +42,9 @@ body {
       opacity: 0;
       width: 0;
     }
+  }
+  @media (min-width: 768px){
+    display: none;
   }
 }
 
@@ -99,7 +103,10 @@ body {
   padding: 1em;
   padding-top:calc($hamburger-height + 4rem);
   @media (min-width: 768px){
-    padding: 10em;
+    flex-direction: row;
+    justify-content: end;
+    margin-right: 25em;
+    padding-top: 25em;
   }
 }
 .typewriter h1 {
@@ -110,10 +117,12 @@ body {
   letter-spacing: 0.1em; /* Adjust as needed */
   font-family: 'Work Sans', sans-serif;
   animation: typing 1.5s steps(12, end), blink-caret 0.75s step-end infinite;
+  animation-delay: 1.5s;
+  animation-fill-mode: both;
   font-size: 2em;
   font-weight: 800;
   @media (min-width:768px) {
-    font-size: 2.5em;
+    font-size: 5em;
   }
 }
 /* The typing effect */
@@ -148,9 +157,10 @@ body {
   height: 4.5em;
   margin: 0 2em;
   @media (min-width: 768px) {
-    width: 10em;
-    height: 10em;
-    margin: 0 2em;
+    border-radius: 15%;
+    width: 20em;
+    height: 25em;
+    margin-right: 28em;
   }
 }
 
@@ -158,13 +168,27 @@ header {
     display: flex;
     flex-direction: column;
     color: white;
+    @media (min-width:768px) {
+      color: $foreground;
+    }
 }
 
 .header-welcome {
   font-size: 1.25em;
+  animation: fadeIn $fade-time ease-in-out; 
   @media (min-width: 768px) {
-      font-size: 1.5em;   
+      font-size: 2em;   
     }
+}
+
+@keyframes fadeIn {
+  0% { 
+    opacity: 0;
+    display: none;
+  }
+  100% { 
+    opacity: 1; 
+  }
 }
 
 .sidebar{
@@ -178,6 +202,9 @@ header {
   color: $background;
   width: 100vw;
   min-height: 100vh;
+  @media (min-width:768px) {
+    display: none;
+  }
 }
 
 nav {
@@ -222,4 +249,31 @@ a {
   clip-path: polygon(0 0, 100% 0, 100% 55%, 0 80%);
   background-color: #67b2fd;
   z-index: -1;
+  @media (min-width: 768px) {
+    clip-path: polygon(0 0, 100% 0, 100% 5%, 0 85%);
+  }
+}
+
+.desktop-links {
+  display: none;
+  & ul {
+    list-style-type: none;
+    display: flex;
+    & li {
+      padding: .5em;
+    }
+  }
+  @media (min-width: 768px) {
+    display: flex;
+    position: absolute;
+    color: white;
+    text-decoration: none;
+    padding: 3em 10em;
+  }
+}
+
+.desktop-anchor {
+  border: none;
+  font-size: 32px;
+  letter-spacing: 0;
 }
