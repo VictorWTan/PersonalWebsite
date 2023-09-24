@@ -11,7 +11,10 @@ $animation-timing: 200ms ease-in-out;
 $hamburger-height: calc( $bar-height * 3 + $hamburger-gap * 2);
 $x-width: calc($hamburger-height * 1.41421356237);
 $svg-height: 1.75rem;
-$fade-time: 1s;
+$main-font: 'Work Sans', sans-serif;
+$quick-fade-in: cubic-bezier(.12,.96,.72,.97);
+$standard-animation-timing: 1s;
+$typewriter-delay: 3s;
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -20,6 +23,49 @@ $fade-time: 1s;
 body {
   margin: 0;
   background-color: $background;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: rgb(166 210 255);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+
+}
+
+@keyframes slideFromBottom {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .hamburger-menu {
@@ -97,9 +143,9 @@ body {
 .profile {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
-  font-family: 'Work Sans', sans-serif;
+  font-family: $main-font;
   padding: 1em;
   padding-top:calc($hamburger-height + 4rem);
   @media (min-width: 768px){
@@ -115,9 +161,9 @@ body {
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
   letter-spacing: 0.1em; /* Adjust as needed */
-  font-family: 'Work Sans', sans-serif;
+  font-family: $main-font;
   animation: typing 1.5s steps(12, end), blink-caret 0.75s step-end infinite;
-  animation-delay: 1.5s;
+  animation-delay: $typewriter-delay;
   animation-fill-mode: both;
   font-size: 2em;
   font-weight: 800;
@@ -125,26 +171,7 @@ body {
     font-size: 5em;
   }
 }
-/* The typing effect */
-@keyframes typing {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 100%;
-  }
-}
 
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-  from,
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: rgb(166 210 255);
-  }
-}
 
 .profile-picture {
   display: flex;
@@ -153,9 +180,12 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 50%;
-  width: 4.5em;
-  height: 4.5em;
-  margin: 0 2em;
+  width: 6em;
+  height: 6em;
+  margin-bottom: 1em;
+  animation: slideIn $standard-animation-timing $quick-fade-in;
+  animation-fill-mode: both;
+  z-index: -1;
   @media (min-width: 768px) {
     border-radius: 15%;
     width: 20em;
@@ -175,7 +205,10 @@ header {
 
 .header-welcome {
   font-size: 1.25em;
-  animation: fadeIn $fade-time ease-in-out; 
+  animation: fadeIn $standard-animation-timing ease-in-out; 
+  animation-delay: 1s;
+  animation-fill-mode: both;
+  z-index: -1;
   @media (min-width: 768px) {
       font-size: 2em;   
     }
@@ -184,7 +217,6 @@ header {
 @keyframes fadeIn {
   0% { 
     opacity: 0;
-    display: none;
   }
   100% { 
     opacity: 1; 
@@ -198,10 +230,11 @@ header {
   translate:-100%;
   padding: .5rem 1rem;
   padding-top: calc($hamburger-height + $hamburger-margin + 2rem);
-  background-color: #67b2fd;
+  background-color: hwb(210 34% 7% / 55);
   color: $background;
   width: 100vw;
   min-height: 100vh;
+  z-index: 1;
   @media (min-width:768px) {
     display: none;
   }
@@ -243,10 +276,10 @@ a {
 }
 
 .background-container{
-  position: fixed;
+  position: absolute;
   width: 100vw;
   height: 100vh;
-  clip-path: polygon(0 0, 100% 0, 100% 55%, 0 80%);
+  clip-path: polygon(0 0, 100% 0, 100% 55%, 0% 70%);
   background-color: #67b2fd;
   z-index: -1;
   @media (min-width: 768px) {
@@ -276,4 +309,28 @@ a {
   border: none;
   font-size: 32px;
   letter-spacing: 0;
+}
+
+.content-box {
+  font-family: $main-font;
+  color: $foreground;
+  display: flex;
+  flex-direction: column ;
+  justify-content: center;
+  font-size: 1.5em;
+  font-weight: 800;
+  margin-top: 3em;
+  letter-spacing: 3px;
+  padding: 1em;
+  z-index: -1;
+  animation: slideFromBottom 1s $quick-fade-in;
+  animation-delay: calc($typewriter-delay + 2.5s);
+  animation-fill-mode: both;
+  & span {
+    display: flex;
+    align-self:self-end;
+  }
+  & :first-child {
+    font-size: 2.5em;
+  }
 }

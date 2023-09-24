@@ -8,6 +8,44 @@ body {
   background-color: white;
 }
 
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: rgb(166, 210, 255);
+  }
+}
+@keyframes slideIn {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+@keyframes slideFromBottom {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 .hamburger-menu {
   display: flex;
   flex-direction: column;
@@ -76,7 +114,7 @@ body {
 .profile {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   font-family: "Work Sans", sans-serif;
   padding: 1em;
@@ -99,7 +137,7 @@ body {
   letter-spacing: 0.1em; /* Adjust as needed */
   font-family: "Work Sans", sans-serif;
   animation: typing 1.5s steps(12, end), blink-caret 0.75s step-end infinite;
-  animation-delay: 1.5s;
+  animation-delay: 3s;
   animation-fill-mode: both;
   font-size: 2em;
   font-weight: 800;
@@ -110,24 +148,6 @@ body {
   }
 }
 
-/* The typing effect */
-@keyframes typing {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 100%;
-  }
-}
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-  from, to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: rgb(166, 210, 255);
-  }
-}
 .profile-picture {
   display: flex;
   background-image: url("./profile-picture.jpeg");
@@ -135,9 +155,12 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 50%;
-  width: 4.5em;
-  height: 4.5em;
-  margin: 0 2em;
+  width: 6em;
+  height: 6em;
+  margin-bottom: 1em;
+  animation: slideIn 1s cubic-bezier(0.12, 0.96, 0.72, 0.97);
+  animation-fill-mode: both;
+  z-index: -1;
 }
 @media (min-width: 768px) {
   .profile-picture {
@@ -162,6 +185,9 @@ header {
 .header-welcome {
   font-size: 1.25em;
   animation: fadeIn 1s ease-in-out;
+  animation-delay: 1s;
+  animation-fill-mode: both;
+  z-index: -1;
 }
 @media (min-width: 768px) {
   .header-welcome {
@@ -172,7 +198,6 @@ header {
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    display: none;
   }
   100% {
     opacity: 1;
@@ -185,10 +210,11 @@ header {
   translate: -100%;
   padding: 0.5rem 1rem;
   padding-top: calc(27px + 1em + 2rem);
-  background-color: #67b2fd;
+  background-color: hwb(210 34% 7%/55);
   color: white;
   width: 100vw;
   min-height: 100vh;
+  z-index: 1;
 }
 @media (min-width: 768px) {
   .sidebar {
@@ -232,10 +258,10 @@ a:focus {
 }
 
 .background-container {
-  position: fixed;
+  position: absolute;
   width: 100vw;
   height: 100vh;
-  clip-path: polygon(0 0, 100% 0, 100% 55%, 0 80%);
+  clip-path: polygon(0 0, 100% 0, 100% 55%, 0% 70%);
   background-color: #67b2fd;
   z-index: -1;
 }
@@ -269,6 +295,30 @@ a:focus {
   border: none;
   font-size: 32px;
   letter-spacing: 0;
+}
+
+.content-box {
+  font-family: "Work Sans", sans-serif;
+  color: #323233;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.5em;
+  font-weight: 800;
+  margin-top: 3em;
+  letter-spacing: 3px;
+  padding: 1em;
+  z-index: -1;
+  animation: slideFromBottom 1s cubic-bezier(0.12, 0.96, 0.72, 0.97);
+  animation-delay: 5.5s;
+  animation-fill-mode: both;
+}
+.content-box span {
+  display: flex;
+  align-self: self-end;
+}
+.content-box :first-child {
+  font-size: 2.5em;
 }
 
 /*# sourceMappingURL=styles.css.map */
