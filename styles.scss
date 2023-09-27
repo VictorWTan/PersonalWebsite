@@ -6,6 +6,7 @@ $hamburger-gap: 6px;
 $foreground: #323233;
 $background: white;
 $menu-foreground: white;
+$lighter-foreground:#01010d91;
 $hamburger-margin: 1em;
 $animation-timing: 200ms ease-in-out;
 $hamburger-height: calc( $bar-height * 3 + $hamburger-gap * 2);
@@ -15,6 +16,7 @@ $main-font: 'Work Sans', sans-serif;
 $quick-fade-in: cubic-bezier(.12,.96,.72,.97);
 $standard-animation-timing: 1s;
 $typewriter-delay: 3s;
+$lower-element-delay: calc($typewriter-delay + 2.5s);
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -23,6 +25,7 @@ $typewriter-delay: 3s;
 body {
   margin: 0;
   background-color: $background;
+  font-family: $main-font;
 }
 
 /* The typing effect */
@@ -282,6 +285,7 @@ a {
   clip-path: polygon(0 0, 100% 0, 100% 55%, 0% 70%);
   background-color: #67b2fd;
   z-index: -1;
+  flex: 1;
   @media (min-width: 768px) {
     clip-path: polygon(0 0, 100% 0, 100% 5%, 0 85%);
   }
@@ -311,7 +315,7 @@ a {
   letter-spacing: 0;
 }
 
-.content-box {
+.introduction-container {
   font-family: $main-font;
   color: $foreground;
   display: flex;
@@ -326,11 +330,36 @@ a {
   animation: slideFromBottom 1s $quick-fade-in;
   animation-delay: calc($typewriter-delay + 2.5s);
   animation-fill-mode: both;
+  @media (min-width: 768px) {
+    margin: 0;
+    padding: 0;
+    padding-right: 3em;
+    font-size: 3em;
+  }
   & span {
     display: flex;
     align-self:self-end;
   }
   & :first-child {
-    font-size: 2.5em;
+    font-size: 1.5em;
   }
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.down-arrow{
+  background-image: url('./icons8-down-arrow-48.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 3em;
+  height: 3em;
+  background-color: $background;
+  border: none;
+  animation: slideFromBottom $standard-animation-timing $quick-fade-in;
+  animation-delay: calc($lower-element-delay + .5s);
+  animation-fill-mode: both;
+  z-index: -1;
 }

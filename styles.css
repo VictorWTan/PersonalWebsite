@@ -6,6 +6,7 @@
 body {
   margin: 0;
   background-color: white;
+  font-family: "Work Sans", sans-serif;
 }
 
 /* The typing effect */
@@ -264,6 +265,7 @@ a:focus {
   clip-path: polygon(0 0, 100% 0, 100% 55%, 0% 70%);
   background-color: #67b2fd;
   z-index: -1;
+  flex: 1;
 }
 @media (min-width: 768px) {
   .background-container {
@@ -297,7 +299,7 @@ a:focus {
   letter-spacing: 0;
 }
 
-.content-box {
+.introduction-container {
   font-family: "Work Sans", sans-serif;
   color: #323233;
   display: flex;
@@ -313,12 +315,39 @@ a:focus {
   animation-delay: 5.5s;
   animation-fill-mode: both;
 }
-.content-box span {
+@media (min-width: 768px) {
+  .introduction-container {
+    margin: 0;
+    padding: 0;
+    padding-right: 3em;
+    font-size: 3em;
+  }
+}
+.introduction-container span {
   display: flex;
   align-self: self-end;
 }
-.content-box :first-child {
-  font-size: 2.5em;
+.introduction-container :first-child {
+  font-size: 1.5em;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.down-arrow {
+  background-image: url("./icons8-down-arrow-48.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 3em;
+  height: 3em;
+  background-color: white;
+  border: none;
+  animation: slideFromBottom 1s cubic-bezier(0.12, 0.96, 0.72, 0.97);
+  animation-delay: 6s;
+  animation-fill-mode: both;
+  z-index: -1;
 }
 
 /*# sourceMappingURL=styles.css.map */
