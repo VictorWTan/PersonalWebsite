@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Noto+Sans+Mono:wght@500&family=Work+Sans:wght@400;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Noto+Sans+Mono:wght@500&family=Work+Sans:wght@400;800&display=swap");
 
 $bar-height: 5px;
 $bar-width: 40px;
@@ -6,19 +6,21 @@ $hamburger-gap: 6px;
 $foreground: #323233;
 $background: white;
 $menu-foreground: white;
-$lighter-foreground:#01010d91;
+$lighter-foreground: #01010d91;
 $hamburger-margin: 1em;
 $animation-timing: 200ms ease-in-out;
-$hamburger-height: calc( $bar-height * 3 + $hamburger-gap * 2);
+$hamburger-height: calc($bar-height * 3 + $hamburger-gap * 2);
 $x-width: calc($hamburger-height * 1.41421356237);
 $svg-height: 1.75rem;
-$main-font: 'Work Sans', sans-serif;
-$quick-fade-in: cubic-bezier(.12,.96,.72,.97);
+$main-font: "Work Sans", sans-serif;
+$quick-fade-in: cubic-bezier(0.12, 0.96, 0.72, 0.97);
 $standard-animation-timing: 1s;
-$typewriter-delay: 3s;
+$typewriter-delay: 2s;
 $lower-element-delay: calc($typewriter-delay + 2.5s);
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -57,7 +59,6 @@ body {
     transform: translateY(0%);
     opacity: 1;
   }
-
 }
 
 @keyframes slideFromBottom {
@@ -92,23 +93,23 @@ body {
       width: 0;
     }
   }
-  @media (min-width: 768px){
+  @media (min-width: 768px) {
     display: none;
   }
 }
 
-.hamburger-menu:has(input:checked){
+.hamburger-menu:has(input:checked) {
   $foreground: #67b2fd;
   $background: white;
   &::before {
     rotate: 45deg;
-    width:$x-width;
+    width: $x-width;
     translate: 0 calc($bar-height/-2);
     background-color: $background;
   }
   &::after {
     rotate: -45deg;
-    width:$x-width;
+    width: $x-width;
     translate: 0 calc($bar-height/2);
     background-color: $background;
   }
@@ -121,9 +122,7 @@ body {
     border: 1px solid $background;
     box-shadow: 0 0 0 1px $foreground;
   }
-
 }
-
 
 .hamburger-menu:has(input:focus-visible)::before,
 .hamburger-menu:has(input:focus-visible)::after,
@@ -132,14 +131,17 @@ body {
   box-shadow: 0 0 0 1px $foreground;
 }
 
-
-.hamburger-menu::before, .hamburger-menu::after, .hamburger-menu input {
+.hamburger-menu::before,
+.hamburger-menu::after,
+.hamburger-menu input {
   content: "";
   width: $bar-width;
   height: $bar-height;
   background-color: white;
   border-radius: 9999px;
-  transition: opacity $animation-timing, width $animation-timing, rotate $animation-timing, translate $animation-timing, background-color $animation-timing;
+  transition: opacity $animation-timing, width $animation-timing,
+    rotate $animation-timing, translate $animation-timing,
+    background-color $animation-timing;
   transform-origin: left center;
 }
 
@@ -150,8 +152,8 @@ body {
   align-items: center;
   font-family: $main-font;
   padding: 1em;
-  padding-top:calc($hamburger-height + 4rem);
-  @media (min-width: 768px){
+  padding-top: calc($hamburger-height + 4rem);
+  @media (min-width: 768px) {
     flex-direction: row;
     justify-content: end;
     margin-right: 25em;
@@ -170,11 +172,10 @@ body {
   animation-fill-mode: both;
   font-size: 2em;
   font-weight: 800;
-  @media (min-width:768px) {
+  @media (min-width: 768px) {
     font-size: 5em;
   }
 }
-
 
 .profile-picture {
   display: flex;
@@ -198,47 +199,47 @@ body {
 }
 
 header {
-    display: flex;
-    flex-direction: column;
-    color: white;
-    @media (min-width:768px) {
-      color: $foreground;
-    }
+  display: flex;
+  flex-direction: column;
+  color: white;
+  @media (min-width: 768px) {
+    color: $foreground;
+  }
 }
 
 .header-welcome {
   font-size: 1.25em;
-  animation: fadeIn $standard-animation-timing ease-in-out; 
+  animation: fadeIn $standard-animation-timing ease-in-out;
   animation-delay: 1s;
   animation-fill-mode: both;
   z-index: -1;
   @media (min-width: 768px) {
-      font-size: 2em;   
-    }
+    font-size: 2em;
+  }
 }
 
 @keyframes fadeIn {
-  0% { 
+  0% {
     opacity: 0;
   }
-  100% { 
-    opacity: 1; 
+  100% {
+    opacity: 1;
   }
 }
 
-.sidebar{
+.sidebar {
   position: absolute;
   top: 0;
   transition: translate $animation-timing;
-  translate:-100%;
-  padding: .5rem 1rem;
+  translate: -100%;
+  padding: 0.5rem 1rem;
   padding-top: calc($hamburger-height + $hamburger-margin + 2rem);
   background-color: hwb(210 34% 7% / 55);
   color: $background;
   width: 100vw;
   min-height: 100vh;
   z-index: 1;
-  @media (min-width:768px) {
+  @media (min-width: 768px) {
     display: none;
   }
 }
@@ -248,29 +249,29 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
   letter-spacing: 0.175em;
   margin-top: 1em;
   & a {
-  padding: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5rem;
-  border: 1px solid white;
-  width: 100%;
-  margin: .5em;
-  border-radius: 5px;
-  & img {
-    height: $svg-height;
-  }
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    border: 1px solid white;
+    width: 100%;
+    margin: 0.5em;
+    border-radius: 5px;
+    & img {
+      height: $svg-height;
+    }
   }
 }
 
 a {
   text-decoration: none;
   color: white;
-  &:hover{
+  &:hover {
     text-decoration: underline;
   }
   &:focus {
@@ -278,10 +279,15 @@ a {
   }
 }
 
-.background-container{
+.background-container {
+  width: 100%;
+  height: 100%;
+}
+
+.background-polygon {
   position: absolute;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   clip-path: polygon(0 0, 100% 0, 100% 55%, 0% 70%);
   background-color: #67b2fd;
   z-index: -1;
@@ -297,7 +303,7 @@ a {
     list-style-type: none;
     display: flex;
     & li {
-      padding: .5em;
+      padding: 0.5em;
     }
   }
   @media (min-width: 768px) {
@@ -319,7 +325,7 @@ a {
   font-family: $main-font;
   color: $foreground;
   display: flex;
-  flex-direction: column ;
+  flex-direction: column;
   justify-content: center;
   font-size: 1.5em;
   font-weight: 800;
@@ -328,7 +334,7 @@ a {
   padding: 1em;
   z-index: -1;
   animation: slideFromBottom 1s $quick-fade-in;
-  animation-delay: calc($typewriter-delay + 2.5s);
+  animation-delay: calc($typewriter-delay + 2s);
   animation-fill-mode: both;
   @media (min-width: 768px) {
     margin: 0;
@@ -338,7 +344,7 @@ a {
   }
   & span {
     display: flex;
-    align-self:self-end;
+    align-self: self-end;
   }
   & :first-child {
     font-size: 1.5em;
@@ -350,16 +356,154 @@ a {
   justify-content: center;
 }
 
-.down-arrow{
-  background-image: url('./icons8-down-arrow-48.png');
+.down-arrow {
+  background-image: url("./icons8-down-arrow-48.png");
   background-repeat: no-repeat;
   background-position: center;
   width: 3em;
   height: 3em;
   background-color: $background;
   border: none;
+  margin-top: 2em;
   animation: slideFromBottom $standard-animation-timing $quick-fade-in;
-  animation-delay: calc($lower-element-delay + .5s);
+  animation-delay: calc($lower-element-delay + 0.5s);
   animation-fill-mode: both;
   z-index: -1;
+}
+
+.experience {
+  margin-top: 1em;
+  animation: slideFromBottom $standard-animation-timing $quick-fade-in;
+  animation-delay: calc($lower-element-delay + 0.5s);
+  animation-fill-mode: both;
+  z-index: -1;
+  padding: 1em;
+  &-content span {
+    padding-bottom: 1em;
+  }
+}
+
+.image-title-container {
+  display: flex;
+  gap: 2em;
+  margin: 1em;
+}
+
+#braverhood {
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
+    background-image: url("./braverhood.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 3em;
+    height: 3em;
+  }
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  & a {
+    color: rgb(8, 8, 200);
+    text-decoration: none;
+  }
+  & h1 {
+    font-size: 1.25em;
+    margin: 0;
+    padding: 0;
+  }
+  & p {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.work-date {
+  font-size: 0.75em;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#manhattan-youth {
+  & .logo-container {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
+    background-image: url("./manhattan-youth.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 3em;
+    height: 3em;
+  }
+}
+
+#east-broadway {
+  & .logo-container {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
+    background-image: url("./tooth.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 3em;
+    height: 3em;
+  }
+}
+
+.description {
+  margin: 0em 1em;
+}
+
+#general-assembly {
+  & .logo-container {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
+    background-image: url("./general-assembly.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 3em;
+    height: 3em;
+  }
+}
+
+#brooklyn-college {
+  & .logo-container {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
+    background-image: url("./brooklyn-college.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 3em;
+    height: 3em;
+  }
+}
+
+#jump-quest {
+  & .logo-container {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
+    background-image: url("./jump-quest.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 3em;
+    height: 3em;
+  }
 }
