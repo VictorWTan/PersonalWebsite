@@ -170,7 +170,7 @@ body {
 @media (min-width: 768px) {
   .profile-picture {
     border-radius: 15%;
-    width: 20em;
+    width: 25em;
     height: 25em;
     margin-right: 28em;
   }
@@ -188,7 +188,7 @@ header {
 }
 
 .header-welcome {
-  font-size: 1.25em;
+  font-size: 1.5em;
   animation: fadeIn 1s ease-in-out;
   animation-delay: 1s;
   animation-fill-mode: both;
@@ -271,14 +271,14 @@ a:focus {
   position: absolute;
   width: 100%;
   height: 100%;
-  clip-path: polygon(0 0, 100% 0, 100% 55%, 0% 70%);
+  clip-path: polygon(0px 0px, 100% 0, 100% 300px, 0% 425px);
   background-color: #67b2fd;
   z-index: -1;
   flex: 1;
 }
 @media (min-width: 768px) {
   .background-polygon {
-    clip-path: polygon(0 0, 100% 0, 100% 5%, 0 85%);
+    clip-path: polygon(0 0, 100% 0, 100% 100px, 0 900px);
   }
 }
 
@@ -298,7 +298,7 @@ a:focus {
     position: absolute;
     color: white;
     text-decoration: none;
-    padding: 3em 10em;
+    padding: 1em 10em;
   }
 }
 
@@ -353,23 +353,32 @@ a:focus {
   height: 3em;
   background-color: white;
   border: none;
-  margin-top: 2em;
+  margin-top: 3em;
   animation: slideFromBottom 1s cubic-bezier(0.12, 0.96, 0.72, 0.97);
   animation-delay: 5s;
   animation-fill-mode: both;
   z-index: -1;
 }
+@media (min-width: 768px) {
+  .down-arrow {
+    width: 8em;
+    height: 8em;
+  }
+}
 
 .experience {
-  margin-top: 1em;
+  margin-top: 2em;
   animation: slideFromBottom 1s cubic-bezier(0.12, 0.96, 0.72, 0.97);
   animation-delay: 5s;
   animation-fill-mode: both;
   z-index: -1;
   padding: 1em;
 }
-.experience-content span {
-  padding-bottom: 1em;
+@media (min-width: 768px) {
+  .experience {
+    font-size: 1.5em;
+    margin: 3em;
+  }
 }
 
 .image-title-container {
@@ -378,6 +387,11 @@ a:focus {
   margin: 1em;
 }
 
+@media (min-width: 768px) {
+  #braverhood {
+    margin-top: 2em;
+  }
+}
 #braverhood .logo-container {
   display: flex;
   justify-content: center;
@@ -442,10 +456,17 @@ a:focus {
   height: 3em;
 }
 
-.description {
-  margin: 0em 1em;
+@media (min-width: 768px) {
+  .description {
+    padding: 1em 3em;
+  }
 }
 
+@media (min-width: 768px) {
+  #general-assembly {
+    margin-top: 2em;
+  }
+}
 #general-assembly .logo-container {
   display: flex;
   justify-content: center;
@@ -459,6 +480,9 @@ a:focus {
   height: 3em;
 }
 
+#brooklyn-college {
+  margin-top: 2em;
+}
 #brooklyn-college .logo-container {
   display: flex;
   justify-content: center;
@@ -472,6 +496,11 @@ a:focus {
   height: 3em;
 }
 
+@media (min-width: 768px) {
+  #jump-quest {
+    margin-top: 2em;
+  }
+}
 #jump-quest .logo-container {
   display: flex;
   justify-content: center;
@@ -483,6 +512,16 @@ a:focus {
   background-size: cover;
   width: 3em;
   height: 3em;
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 2em;
+  }
+}
+
+.projects-content, .education-content {
+  margin-top: 2em;
 }
 
 /*# sourceMappingURL=styles.css.map */
