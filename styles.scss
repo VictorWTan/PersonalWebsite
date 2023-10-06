@@ -369,7 +369,7 @@ a {
   animation-delay: calc($lower-element-delay + 0.5s);
   animation-fill-mode: both;
   z-index: -1;
-  @media (min-width: 768px){
+  @media (min-width: 768px) {
     width: 8em;
     height: 8em;
   }
@@ -382,7 +382,7 @@ a {
   animation-fill-mode: both;
   z-index: -1;
   padding: 1em;
-  @media (min-width: 768px){
+  @media (min-width: 768px) {
     font-size: 1.5em;
     margin: 3em;
   }
@@ -468,7 +468,7 @@ a {
 }
 
 .description {
-  @media (min-width: 768px){
+  @media (min-width: 768px) {
     padding: 1em 3em;
   }
 }
@@ -526,11 +526,49 @@ a {
 }
 
 .section-title {
-  @media (min-width: 768px){
+  @media (min-width: 768px) {
     font-size: 2em;
   }
 }
 
-.projects-content, .education-content {
+.projects-content,
+.education-content {
   margin-top: 2em;
+}
+
+
+#dogvana {
+  @media (min-width: 768px) {
+    margin-top: 2em;
+  }
+  & .logo-container {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
+    background-image: url("./poodle.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 3em;
+    height: 3em;
+  }
+}
+
+#huddle-and-chill {
+  @media (min-width: 768px) {
+    margin-top: 2em;
+  }
+  & .logo-container {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
+    background-image: url("./icon.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 3em;
+    height: 3em;
+  }
 }

@@ -520,8 +520,45 @@ a:focus {
   }
 }
 
-.projects-content, .education-content {
+.projects-content,
+.education-content {
   margin-top: 2em;
+}
+
+@media (min-width: 768px) {
+  #dogvana {
+    margin-top: 2em;
+  }
+}
+#dogvana .logo-container {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  flex-direction: column;
+  background-image: url("./poodle.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 3em;
+  height: 3em;
+}
+
+@media (min-width: 768px) {
+  #huddle-and-chill {
+    margin-top: 2em;
+  }
+}
+#huddle-and-chill .logo-container {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  flex-direction: column;
+  background-image: url("./icon.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 3em;
+  height: 3em;
 }
 
 /*# sourceMappingURL=styles.css.map */

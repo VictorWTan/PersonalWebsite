@@ -20,5 +20,11 @@ const fadeInAndOut = () => {
     experienceAppear()
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    // Scroll to the top of the page
+    window.scrollTo(0, 0);
+});
+
+
 
 window.addEventListener('scroll', fadeInAndOut)
