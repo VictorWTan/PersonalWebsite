@@ -317,7 +317,7 @@ a:focus {
   justify-content: center;
   font-size: 1.5em;
   font-weight: 800;
-  margin-top: 1em;
+  margin-top: 3em;
   letter-spacing: 3px;
   padding: 1em;
   z-index: -1;
@@ -354,7 +354,6 @@ a:focus {
   height: 3em;
   background-color: white;
   border: none;
-  margin-top: 1em;
   animation: slideFromBottom 1s cubic-bezier(0.12, 0.96, 0.72, 0.97);
   animation-delay: 5s;
   animation-fill-mode: both;
