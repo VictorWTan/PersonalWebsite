@@ -129,8 +129,8 @@ body {
   .profile {
     flex-direction: row;
     justify-content: end;
-    margin-right: 25em;
-    padding-top: 25em;
+    margin-right: 20em;
+    padding-top: 20em;
   }
 }
 
@@ -149,7 +149,7 @@ body {
 }
 @media (min-width: 768px) {
   .typewriter h1 {
-    font-size: 5em;
+    font-size: 3.5em;
   }
 }
 
@@ -329,7 +329,7 @@ a:focus {
     margin: 0;
     padding: 0;
     padding-right: 3em;
-    font-size: 3em;
+    font-size: 2.5em;
   }
 }
 .introduction-container span {
@@ -376,7 +376,6 @@ a:focus {
 }
 @media (min-width: 768px) {
   .experience {
-    font-size: 1.5em;
     margin: 3em;
   }
 }
@@ -516,7 +515,7 @@ a:focus {
 
 @media (min-width: 768px) {
   .section-title {
-    font-size: 2em;
+    font-size: 1.5em;
   }
 }
 

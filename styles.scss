@@ -156,8 +156,8 @@ body {
   @media (min-width: 768px) {
     flex-direction: row;
     justify-content: end;
-    margin-right: 25em;
-    padding-top: 25em;
+    margin-right: 20em;
+    padding-top: 20em;
   }
 }
 .typewriter h1 {
@@ -173,7 +173,7 @@ body {
   font-size: 2em;
   font-weight: 800;
   @media (min-width: 768px) {
-    font-size: 5em;
+    font-size: 3.5em;
   }
 }
 
@@ -340,7 +340,7 @@ a {
     margin: 0;
     padding: 0;
     padding-right: 3em;
-    font-size: 3em;
+    font-size: 2.5em;
   }
   & span {
     display: flex;
@@ -383,7 +383,6 @@ a {
   z-index: -1;
   padding: 1em;
   @media (min-width: 768px) {
-    font-size: 1.5em;
     margin: 3em;
   }
 }
@@ -527,7 +526,7 @@ a {
 
 .section-title {
   @media (min-width: 768px) {
-    font-size: 2em;
+    font-size: 1.5em;
   }
 }
 
