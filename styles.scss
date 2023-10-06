@@ -181,11 +181,11 @@ body {
 
 .profile-picture {
   display: flex;
-  background-image: url("./profile-picture.jpeg");
+  background-image: url("./profile-picture.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  border-radius: 50%;
+  border-radius: 15%;
   width: 6em;
   height: 6em;
   margin-bottom: 1em;
@@ -193,9 +193,9 @@ body {
   animation-fill-mode: both;
   z-index: -1;
   @media (min-width: 768px) {
-    border-radius: 15%;
-    width: 20em;
-    height: 20em;
+    border-radius: 0%;
+    width: 25em;
+    height: 25em;
     margin-right: 35%;
     margin-top: 10%;
   }
