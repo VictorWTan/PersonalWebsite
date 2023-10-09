@@ -141,6 +141,9 @@ body {
   height: $bar-height;
   background-color: white;
   border-radius: 9999px;
+  -moz-transition: opacity $animation-timing, width $animation-timing,
+  rotate $animation-timing, translate $animation-timing,
+  background-color $animation-timing;
   transition: opacity $animation-timing, width $animation-timing,
     rotate $animation-timing, translate $animation-timing,
     background-color $animation-timing;
@@ -169,6 +172,7 @@ body {
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
   letter-spacing: 0.1em; /* Adjust as needed */
   font-family: $main-font;
+  -moz-animation: typing 1.5s steps(12, end), blink-caret 0.75s step-end infinite;
   animation: typing 1.5s steps(12, end), blink-caret 0.75s step-end infinite;
   animation-delay: $typewriter-delay;
   animation-fill-mode: both;
@@ -189,6 +193,7 @@ body {
   width: 8em;
   height: 8em;
   margin-bottom: 1em;
+  -moz-animation: slideIn $standard-animation-timing $quick-fade-in;
   animation: slideIn $standard-animation-timing $quick-fade-in;
   animation-fill-mode: both;
   z-index: -1;
@@ -212,6 +217,7 @@ header {
 
 .header-welcome {
   font-size: 1.5em;
+  -moz-animation: fadeIn $standard-animation-timing ease-in-out;
   animation: fadeIn $standard-animation-timing ease-in-out;
   animation-delay: 1s;
   animation-fill-mode: both;
@@ -336,6 +342,7 @@ a {
   letter-spacing: 3px;
   padding: 1em;
   z-index: -1;
+  -moz-animation: fadeIn $standard-animation-timing ease-in-out;
   animation: slideFromBottom 1s $quick-fade-in;
   animation-delay: calc($typewriter-delay + 2s);
   animation-fill-mode: both;
@@ -577,7 +584,7 @@ a {
 
 .welcome-container {
   @media (min-width: 768px){
-  padding-top: 7em;
+  padding-top: 9em;
   }
 }
 

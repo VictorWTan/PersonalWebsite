@@ -112,6 +112,7 @@ body {
   height: 5px;
   background-color: white;
   border-radius: 9999px;
+  -moz-transition: opacity 200ms ease-in-out, width 200ms ease-in-out, rotate 200ms ease-in-out, translate 200ms ease-in-out, background-color 200ms ease-in-out;
   transition: opacity 200ms ease-in-out, width 200ms ease-in-out, rotate 200ms ease-in-out, translate 200ms ease-in-out, background-color 200ms ease-in-out;
   transform-origin: left center;
 }
@@ -141,6 +142,7 @@ body {
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
   letter-spacing: 0.1em; /* Adjust as needed */
   font-family: "Work Sans", sans-serif;
+  -moz-animation: typing 1.5s steps(12, end), blink-caret 0.75s step-end infinite;
   animation: typing 1.5s steps(12, end), blink-caret 0.75s step-end infinite;
   animation-delay: 2s;
   animation-fill-mode: both;
@@ -163,6 +165,7 @@ body {
   width: 8em;
   height: 8em;
   margin-bottom: 1em;
+  -moz-animation: slideIn 1s cubic-bezier(0.12, 0.96, 0.72, 0.97);
   animation: slideIn 1s cubic-bezier(0.12, 0.96, 0.72, 0.97);
   animation-fill-mode: both;
   z-index: -1;
@@ -190,6 +193,7 @@ header {
 
 .header-welcome {
   font-size: 1.5em;
+  -moz-animation: fadeIn 1s ease-in-out;
   animation: fadeIn 1s ease-in-out;
   animation-delay: 1s;
   animation-fill-mode: both;
@@ -321,6 +325,7 @@ a:focus {
   letter-spacing: 3px;
   padding: 1em;
   z-index: -1;
+  -moz-animation: fadeIn 1s ease-in-out;
   animation: slideFromBottom 1s cubic-bezier(0.12, 0.96, 0.72, 0.97);
   animation-delay: 4s;
   animation-fill-mode: both;
@@ -555,7 +560,7 @@ a:focus {
 
 @media (min-width: 768px) {
   .welcome-container {
-    padding-top: 7em;
+    padding-top: 9em;
   }
 }
 

@@ -1,7 +1,7 @@
 let body = document.body
 let html = document.documentElement
-import AOS from 'aos';
-import 'aos/dist/aos.css'; // You can also use <link> for styles
+// import AOS from 'aos';
+// import 'aos/dist/aos.css'; // You can also use <link> for styles
 
 AOS.init({
   // Global settings:
@@ -53,3 +53,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 window.addEventListener('scroll', fadeInAndOut)
+
+const hamburgerInput = document.getElementById('checks');
+
+hamburgerInput.addEventListener('change', () => {
+    console.log('Event fired')
+    if (hamburgerInput.checked) {
+        body.style.overflow = 'hidden';
+    } else {
+        body.style.overflow = 'visible';
+    }
+})
