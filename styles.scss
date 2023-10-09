@@ -186,8 +186,8 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 15%;
-  width: 6em;
-  height: 6em;
+  width: 8em;
+  height: 8em;
   margin-bottom: 1em;
   animation: slideIn $standard-animation-timing $quick-fade-in;
   animation-fill-mode: both;
@@ -365,6 +365,7 @@ a {
   background-position: center;
   width: 3em;
   height: 3em;
+  margin-top: 8em;
   background-color: $background;
   border: none;
   animation: slideFromBottom $standard-animation-timing $quick-fade-in;
@@ -379,9 +380,9 @@ a {
 
 .experience {
   margin-top: 2em;
-  // animation: slideFromBottom $standard-animation-timing $quick-fade-in;
-  // animation-delay: calc($lower-element-delay + 0.5s);
-  // animation-fill-mode: both;
+  animation: slideFromBottom $standard-animation-timing $quick-fade-in;
+  animation-delay: calc($lower-element-delay + 0.5s);
+  animation-fill-mode: both;
   z-index: -1;
   padding: 1em;
   @media (min-width: 768px) {
@@ -575,5 +576,7 @@ a {
 }
 
 .welcome-container {
+  @media (min-width: 768px){
   padding-top: 7em;
+  }
 }
