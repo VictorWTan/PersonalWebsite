@@ -159,7 +159,7 @@ body {
     flex-direction: row;
     justify-content: end;
     margin-right: 20em;
-    padding-top: 13em;
+    padding-top: 6em;
   }
 }
 .typewriter h1 {
@@ -379,9 +379,9 @@ a {
 
 .experience {
   margin-top: 2em;
-  animation: slideFromBottom $standard-animation-timing $quick-fade-in;
-  animation-delay: calc($lower-element-delay + 0.5s);
-  animation-fill-mode: both;
+  // animation: slideFromBottom $standard-animation-timing $quick-fade-in;
+  // animation-delay: calc($lower-element-delay + 0.5s);
+  // animation-fill-mode: both;
   z-index: -1;
   padding: 1em;
   @media (min-width: 768px) {
@@ -475,9 +475,6 @@ a {
 }
 
 #general-assembly {
-  @media (min-width: 768px) {
-    margin-top: 2em;
-  }
   & .logo-container {
     display: flex;
     justify-content: center;
@@ -493,7 +490,6 @@ a {
 }
 
 #brooklyn-college {
-  margin-top: 2em;
   & .logo-container {
     display: flex;
     justify-content: center;
@@ -509,9 +505,6 @@ a {
 }
 
 #jump-quest {
-  @media (min-width: 768px) {
-    margin-top: 2em;
-  }
   & .logo-container {
     display: flex;
     justify-content: center;
@@ -539,9 +532,6 @@ a {
 
 
 #dogvana {
-  @media (min-width: 768px) {
-    margin-top: 2em;
-  }
   & .logo-container {
     display: flex;
     justify-content: center;
@@ -557,9 +547,6 @@ a {
 }
 
 #huddle-and-chill {
-  @media (min-width: 768px) {
-    margin-top: 2em;
-  }
   & .logo-container {
     display: flex;
     justify-content: center;
@@ -572,4 +559,21 @@ a {
     width: 3em;
     height: 3em;
   }
+}
+
+.description-box {
+  margin-top: 1em;
+  padding: 1em;
+  border: 1px solid black;
+  border-radius: 5%;
+  box-shadow: 3px 3px 3px grey;
+  @media (min-width: 768px) {
+    border-radius: 10px;
+    margin-top: 2em;
+    padding: 2em;
+  }
+}
+
+.welcome-container {
+  padding-top: 7em;
 }
