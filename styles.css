@@ -112,6 +112,7 @@ body {
   height: 5px;
   background-color: white;
   border-radius: 9999px;
+  -moz-transition: opacity 200ms ease-in-out, width 200ms ease-in-out, rotate 200ms ease-in-out, translate 200ms ease-in-out, background-color 200ms ease-in-out;
   transition: opacity 200ms ease-in-out, width 200ms ease-in-out, rotate 200ms ease-in-out, translate 200ms ease-in-out, background-color 200ms ease-in-out;
   transform-origin: left center;
 }
@@ -130,7 +131,7 @@ body {
     flex-direction: row;
     justify-content: end;
     margin-right: 20em;
-    padding-top: 13em;
+    padding-top: 6em;
   }
 }
 
@@ -141,6 +142,7 @@ body {
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
   letter-spacing: 0.1em; /* Adjust as needed */
   font-family: "Work Sans", sans-serif;
+  -moz-animation: typing 1.5s steps(12, end), blink-caret 0.75s step-end infinite;
   animation: typing 1.5s steps(12, end), blink-caret 0.75s step-end infinite;
   animation-delay: 2s;
   animation-fill-mode: both;
@@ -160,9 +162,10 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 15%;
-  width: 6em;
-  height: 6em;
+  width: 8em;
+  height: 8em;
   margin-bottom: 1em;
+  -moz-animation: slideIn 1s cubic-bezier(0.12, 0.96, 0.72, 0.97);
   animation: slideIn 1s cubic-bezier(0.12, 0.96, 0.72, 0.97);
   animation-fill-mode: both;
   z-index: -1;
@@ -190,6 +193,7 @@ header {
 
 .header-welcome {
   font-size: 1.5em;
+  -moz-animation: fadeIn 1s ease-in-out;
   animation: fadeIn 1s ease-in-out;
   animation-delay: 1s;
   animation-fill-mode: both;
@@ -321,6 +325,7 @@ a:focus {
   letter-spacing: 3px;
   padding: 1em;
   z-index: -1;
+  -moz-animation: fadeIn 1s ease-in-out;
   animation: slideFromBottom 1s cubic-bezier(0.12, 0.96, 0.72, 0.97);
   animation-delay: 4s;
   animation-fill-mode: both;
@@ -352,6 +357,7 @@ a:focus {
   background-position: center;
   width: 3em;
   height: 3em;
+  margin-top: 8em;
   background-color: white;
   border: none;
   animation: slideFromBottom 1s cubic-bezier(0.12, 0.96, 0.72, 0.97);
@@ -461,11 +467,6 @@ a:focus {
   }
 }
 
-@media (min-width: 768px) {
-  #general-assembly {
-    margin-top: 2em;
-  }
-}
 #general-assembly .logo-container {
   display: flex;
   justify-content: center;
@@ -479,9 +480,6 @@ a:focus {
   height: 3em;
 }
 
-#brooklyn-college {
-  margin-top: 2em;
-}
 #brooklyn-college .logo-container {
   display: flex;
   justify-content: center;
@@ -495,11 +493,6 @@ a:focus {
   height: 3em;
 }
 
-@media (min-width: 768px) {
-  #jump-quest {
-    margin-top: 2em;
-  }
-}
 #jump-quest .logo-container {
   display: flex;
   justify-content: center;
@@ -524,11 +517,6 @@ a:focus {
   margin-top: 2em;
 }
 
-@media (min-width: 768px) {
-  #dogvana {
-    margin-top: 2em;
-  }
-}
 #dogvana .logo-container {
   display: flex;
   justify-content: center;
@@ -542,11 +530,6 @@ a:focus {
   height: 3em;
 }
 
-@media (min-width: 768px) {
-  #huddle-and-chill {
-    margin-top: 2em;
-  }
-}
 #huddle-and-chill .logo-container {
   display: flex;
   justify-content: center;
@@ -558,6 +541,27 @@ a:focus {
   background-size: cover;
   width: 3em;
   height: 3em;
+}
+
+.description-box {
+  margin-top: 1em;
+  padding: 1em;
+  border: 1px solid black;
+  border-radius: 5%;
+  box-shadow: 3px 3px 3px grey;
+}
+@media (min-width: 768px) {
+  .description-box {
+    border-radius: 10px;
+    margin-top: 2em;
+    padding: 2em;
+  }
+}
+
+@media (min-width: 768px) {
+  .welcome-container {
+    padding-top: 9em;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
