@@ -162,7 +162,7 @@ body {
     flex-direction: row;
     justify-content: end;
     margin-right: 20em;
-    padding-top: 9em;
+    padding-top: 12em;
   }
 }
 .typewriter h1 {
@@ -199,8 +199,8 @@ body {
   z-index: -1;
   @media (min-width: 768px) {
     border-radius: 0%;
-    width: 20em;
-    height: 20em;
+    width: 15em;
+    height: 15em;
     margin-top: 10%;
   }
 }
@@ -301,7 +301,7 @@ a {
   z-index: -1;
   flex: 1;
   @media (min-width: 768px) {
-    clip-path: polygon(0 0, 100% 0, 100% 100px, 0 600px);
+    clip-path: polygon(0 0, 100% 0, 100% 50px, 0 600px);
   }
 }
 
@@ -371,7 +371,6 @@ a {
   background-position: center;
   width: 3em;
   height: 3em;
-  margin-top: 8em;
   background-color: $background;
   border: none;
   animation: slideFromBottom $standard-animation-timing $quick-fade-in;
