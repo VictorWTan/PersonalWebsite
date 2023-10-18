@@ -131,7 +131,7 @@ body {
     flex-direction: row;
     justify-content: end;
     margin-right: 20em;
-    padding-top: 6em;
+    padding-top: 9em;
   }
 }
 
@@ -151,7 +151,7 @@ body {
 }
 @media (min-width: 768px) {
   .typewriter h1 {
-    font-size: 3.5em;
+    font-size: 3em;
   }
 }
 
@@ -173,9 +173,8 @@ body {
 @media (min-width: 768px) {
   .profile-picture {
     border-radius: 0%;
-    width: 25em;
-    height: 25em;
-    margin-right: 35%;
+    width: 20em;
+    height: 20em;
     margin-top: 10%;
   }
 }
@@ -246,7 +245,7 @@ nav a {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.5rem;
+  font-size: 1rem;
   border: 1px solid white;
   width: 100%;
   margin: 0.5em;
@@ -283,7 +282,7 @@ a:focus {
 }
 @media (min-width: 768px) {
   .background-polygon {
-    clip-path: polygon(0 0, 100% 0, 100% 100px, 0 900px);
+    clip-path: polygon(0 0, 100% 0, 100% 100px, 0 600px);
   }
 }
 
@@ -309,7 +308,7 @@ a:focus {
 
 .desktop-anchor {
   border: none;
-  font-size: 1.5em;
+  font-size: 1.25em;
   letter-spacing: 0;
 }
 
@@ -343,7 +342,7 @@ a:focus {
   align-self: self-end;
 }
 .introduction-container :first-child {
-  font-size: 1.5em;
+  font-size: 1em;
 }
 
 .button-container {
@@ -560,7 +559,8 @@ a:focus {
 
 @media (min-width: 768px) {
   .welcome-container {
-    padding-top: 9em;
+    padding-top: 6em;
+    margin-left: 10em;
   }
 }
 

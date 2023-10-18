@@ -162,7 +162,7 @@ body {
     flex-direction: row;
     justify-content: end;
     margin-right: 20em;
-    padding-top: 6em;
+    padding-top: 9em;
   }
 }
 .typewriter h1 {
@@ -179,7 +179,7 @@ body {
   font-size: 2em;
   font-weight: 800;
   @media (min-width: 768px) {
-    font-size: 3.5em;
+    font-size: 3em;
   }
 }
 
@@ -199,9 +199,8 @@ body {
   z-index: -1;
   @media (min-width: 768px) {
     border-radius: 0%;
-    width: 25em;
-    height: 25em;
-    margin-right: 35%;
+    width: 20em;
+    height: 20em;
     margin-top: 10%;
   }
 }
@@ -266,7 +265,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 1rem;
     border: 1px solid white;
     width: 100%;
     margin: 0.5em;
@@ -302,7 +301,7 @@ a {
   z-index: -1;
   flex: 1;
   @media (min-width: 768px) {
-    clip-path: polygon(0 0, 100% 0, 100% 100px, 0 900px);
+    clip-path: polygon(0 0, 100% 0, 100% 100px, 0 600px);
   }
 }
 
@@ -326,7 +325,7 @@ a {
 
 .desktop-anchor {
   border: none;
-  font-size: 1.5em;
+  font-size: 1.25em;
   letter-spacing: 0;
 }
 
@@ -357,7 +356,7 @@ a {
     align-self: self-end;
   }
   & :first-child {
-    font-size: 1.5em;
+    font-size: 1em;
   }
 }
 
@@ -584,7 +583,8 @@ a {
 
 .welcome-container {
   @media (min-width: 768px){
-  padding-top: 9em;
+  padding-top: 6em;
+  margin-left: 10em;;
   }
 }
 
